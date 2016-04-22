@@ -20,6 +20,7 @@
 - (IBAction)fetchButton:(id)sender;
 - (IBAction)SearchButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *ImageView;
 
 
 @end

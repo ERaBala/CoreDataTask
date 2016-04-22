@@ -23,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
 
 }
 
@@ -89,7 +91,33 @@
 
 
 - (IBAction)fetchButton:(id)sender {
+    
+    UIImage *image = [UIImage imageNamed:@"find.png"];
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSUInteger len = [imageData length];
+    Byte *byteData= (Byte*)malloc(len);
+    /*
+//    [imageData  getBytes:byteData length:len];
+//    NSLog(@"***** \n %@",imageData);
+//   UIImage *ShowImage = [UIImage imageWithData: imageData];
+//    self.ImageView.image = [[UIImageView alloc]initWithImage:ShowImage];
+//    UIImage *img = [UIImage imageWithData:data];
+//    UIImageView *imgView = [[UIImageView alloc]initWithImage:img];
+    
+     
+     http://stackoverflow.com/questions/12257619/how-can-i-convert-images-to-bytes-and-bytes-to-image
+     
+    */
+    
+    
+    NSData *data = [NSData dataWithBytes:byteData length:len];
 
+    
+    UIImage *images = [[UIImage alloc]initWithData:data];
+    [self.ImageView setImage:images];
+    
+//    self.ImageView.image = imgView;
 }
 
 -(void)fetchCoreData: (NSString *)identifervalue
