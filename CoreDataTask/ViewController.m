@@ -160,33 +160,6 @@
 
 - (void)updateCoreData {
     
-//    appDelegate = [[UIApplication sharedApplication] delegate];
-//    NSManagedObjectContext *context2= [appDelegate managedObjectContext];
-    
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Table" inManagedObjectContext:context];
-//    [fetchRequest setEntity:entity];
-//
-//    NSError *error = nil;
-//    NSArray *fetchedObjects = [context2 executeFetchRequest:fetchRequest error:&error];
-//    if (fetchedObjects == nil) {
-//        NSLog(@"Could not delete Entity Objects");
-//    }
-//    for (entity in fetchedObjects) {
-//        [context2 deleteObject:result];
-//    }
-   /*
-    NSFetchRequest *fetchRequest=[NSFetchRequest fetchRequestWithEntityName:@"Vehicle"];
-    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"id==%@",vehicle_id]; // If required to fetch specific vehicle
-    fetchRequest.predicate=predicate;
-    Vehicle *newVehicle=[[self.managedObjectContext executeFetchRequest:fetchRequest error:nil] lastObject];
-    
-    [newVehicle setValue: _txtFieldVehicleNumber.text forKey:@"number"];
-    [newVehicle setValue: lblFuelType.text forKey:@"fueltype"];
-    [newVehicle setValue: lblFuelUnit.text forKey:@"fuelunit"];
-    [newVehicle setValue: lblDistanceUnit.text forKey:@"distanceunit"];
-    [self.managedObjectContext save:nil]
-    */
     NSError *error = nil;
 
     appDelegate = [[UIApplication sharedApplication] delegate];
@@ -227,22 +200,6 @@
     if (![context save:&error]) {
         //Handle any error with the saving of the context
     }
-    
-//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-//    NSFetchRequest *fetchedRequest = [[NSFetchRequest alloc] init];
-//    /*
-//     fetch the first dog and then add walks to it .
-//     */
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Dog" inManagedObjectContext:context];
-//    [fetchedRequest setEntity:entity];
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetchedRequest error:nil];
-//    NSString *dog = fetchedObjects[0];
-//    Walks *walk = [NSEntityDescription insertNewObjectForEntityForName:@"CDT01" inManagedObjectContext:context];
-//    walk.date = date;
-//    NSMutableOrderedSet *walks = [dog.walks mutableCopy];
-//    [walks addObject:walk];
-//    dog.walks = walks.copy;
-//    [context save:nil];
 }
 
 -(void)aleartController: (NSString *)TitleValue: (NSString *)message
@@ -254,6 +211,7 @@
                                   preferredStyle:UIAlertControllerStyleAlert];
     if ([TitleValue isEqualToString:@"Search"])
     {
+        
             [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
                 textField.placeholder = @"Enter your ID";
                 textField.borderStyle = UITextBorderStyleRoundedRect;
