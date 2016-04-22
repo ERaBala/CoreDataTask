@@ -1,0 +1,47 @@
+
+/*      //      This one for fetching the ObjectID  like this ======
+
+<NSManagedObject: 0x7f8821596930> (entity: Table; id: 0xd000000000080000 <x-coredata://4676D1C0-EF24-46F4-BAC2-9542957A954F/Table/p2> ; data: {
+age = 12;
+emailid = asad;
+name = a;
+qualification = wsddf;
+}),
+<NSManagedObject: 0x7f88215a0860> (entity: Table; id: 0xd0000000000c0000 <x-coredata://4676D1C0-EF24-46F4-BAC2-9542957A954F/Table/p3> ; data: {
+age = 12;
+emailid = asad;
+name = a;
+qualification = wsddf;
+}),
+
+//     Coading start
+
+NSFetchRequest *request = [[NSFetchRequest alloc] init];
+request.entity = [NSEntityDescription entityForName:@"Table" inManagedObjectContext:context];
+request.sortDescriptors = [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil];
+request.predicate = nil;
+request.fetchLimit = 20;
+
+NSError *error = nil;
+NSArray *fetchedResults = [context executeFetchRequest:request error:&error];
+
+NSLog(@"%@", [fetchedResults valueForKey:@"objectID"]);
+
+*/
+
+/*
+// geting UUID values...
+
+CFUUIDRef UUID = CFUUIDCreate(kCFAllocatorDefault);
+CFStringRef UUIDString = CFUUIDCreateString(kCFAllocatorDefault,UUID);
+NSLog(@"%@",UUIDString);
+
+(or)
+
+NSUUID *uuid = [[NSUUID alloc] init];
+NSString *uuidStr = [uuid UUIDString];
+NSLog(@"%@",uuidStr);
+
+//    <x-coredata://24C40E7B-ECD2-48C5-89A6-03F85727EC5A/MyClass/p12>
+*/
+
