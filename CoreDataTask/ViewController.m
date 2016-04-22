@@ -104,6 +104,7 @@
 //    self.ImageView.image = [[UIImageView alloc]initWithImage:ShowImage];
 //    UIImage *img = [UIImage imageWithData:data];
 //    UIImageView *imgView = [[UIImageView alloc]initWithImage:img];
+         self.ImageView.image = imgView;
      
      http://stackoverflow.com/questions/12257619/how-can-i-convert-images-to-bytes-and-bytes-to-image
      
@@ -113,7 +114,7 @@
     UIImage *images = [[UIImage alloc]initWithData:data];
     [self.ImageView setImage:images];
     
-//    self.ImageView.image = imgView;
+
 }
 
 -(void)fetchCoreData: (NSString *)identifervalue
